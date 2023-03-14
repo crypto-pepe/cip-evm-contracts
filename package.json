@@ -4,6 +4,7 @@
   "devDependencies": {
     "@nomicfoundation/hardhat-network-helpers": "^1.0.8",
     "@nomicfoundation/hardhat-toolbox": "^1.0.2",
+    "@nomiclabs/hardhat-etherscan": "^3.1.6",
     "@nomiclabs/hardhat-solhint": "^2.0.1",
     "@typescript-eslint/eslint-plugin": "^5.51.0",
     "@typescript-eslint/parser": "^5.51.0",
@@ -15,7 +16,7 @@
     "eslint": "^8.33.0",
     "eslint-plugin-import": "^2.27.5",
     "hardhat": "^2.12.7",
-    "hardhat-deploy": "^0.11.23",
+    "hardhat-deploy": "^0.11.25",
     "hardhat-gas-reporter": "^1.0.9",
     "mocha": "^10.2.0",
     "mocha-junit-reporter": "^2.2.0",

@@ -27,3 +27,5 @@ audit/
 
 contracts-exposed/
 deployments/localhost
+
+.idea/

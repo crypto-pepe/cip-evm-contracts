@@ -95,6 +95,7 @@ describe("Waves Caller component", function() {
         await caller
           .connect(other)
           .call(TRANSPORT_SOURCE_CHAIN_ID, caller.address, "funcName", [
+            "",
             "arg1",
             "2",
           ])
@@ -103,11 +104,10 @@ describe("Waves Caller component", function() {
         .withArgs(
           EXTERNAL_SOURCE_CHAIN_ID,
           TRANSPORT_SOURCE_CHAIN_ID,
-          other.address,
           caller.address,
           "funcName",
-          ["arg1", "2"],
-          1
+          [other.address.toLocaleLowerCase(), "arg1", "2"],
+          0
         );
     });
   });

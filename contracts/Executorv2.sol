@@ -6,7 +6,7 @@ import "./Pausable.sol";
 import "./ECDSA.sol";
 import "./Mutex.sol";
 
-contract Executor is Initializable, Pausable, Mutex {
+contract ExecutorV2 is Initializable, Pausable, Mutex {
     uint16 public chainId;
     address public protocolSigner;
     mapping(bytes32 => uint256) public hashes;
@@ -50,8 +50,10 @@ contract Executor is Initializable, Pausable, Mutex {
                 callerChainId_,
                 executionChainId_,
                 nonce_,
+                bytes(txHash_).length,
                 txHash_,
                 contract_,
+                callData_.length,
                 callData_
             )
         );

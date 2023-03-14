@@ -6,8 +6,8 @@ const main: any = async function(hre: any) {
   const { deployer } = await hre.getNamedAccounts();
   const { deploy, get } = hre.deployments;
 
+  const sepoliaChainId = 10002;
   const multisig = await get("Multisig_Proxy");
-  const chainId = 10002;
 
   await deploy("WavesCaller", {
     from: deployer,
@@ -17,15 +17,15 @@ const main: any = async function(hre: any) {
       execute: {
         init: {
           methodName: "init",
-          args: [multisig.address, chainId],
+          args: [multisig.address, sepoliaChainId],
         },
       },
     },
   });
 };
 
-main.id = "waves_caller_deploy_sepolia";
-main.tags = ["WavesCaller", "sepolia", "ethereum"];
-module.exports.dependencies = ["Multisig"];
+main.id = "ethereum_sepolia_waves_caller_deploy";
+main.tags = ["ethereum", "sepolia", "WavesCaller"];
+main.dependencies = ["ethereum_sepolia_multisig_deploy"];
 
 export default main;
